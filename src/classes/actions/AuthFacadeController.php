@@ -90,6 +90,7 @@ class AuthFacadeController extends Controller
             $user = new User();
             $user->email = $request['email'];
             $user->name = $request['name'];
+            $user->type = 'admin';
             $user->password = Hash::make(Str::random(8));
             try {
                 $user->save();
